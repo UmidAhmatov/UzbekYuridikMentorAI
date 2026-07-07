@@ -1,0 +1,179 @@
+.chat {
+  height: 100%;
+  min-height: 0;
+  display: grid;
+  grid-template-rows: auto auto minmax(0, 1fr) auto auto;
+  background: #ffffff;
+}
+
+.header {
+  grid-row: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 20px;
+  border-bottom: 1px solid #e4e9f1;
+}
+
+.eyebrow {
+  margin: 0 0 5px;
+  color: #356859;
+  font-size: 0.75rem;
+  font-weight: 750;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.title {
+  margin: 0;
+  font-size: 1.25rem;
+  line-height: 1.2;
+}
+
+.badge {
+  flex: 0 0 auto;
+  border: 1px solid #cfd8e3;
+  border-radius: 999px;
+  padding: 6px 10px;
+  color: #526071;
+  font-size: 0.82rem;
+  line-height: 1;
+}
+
+.sources {
+  grid-row: 2;
+  display: flex;
+  overflow-x: auto;
+  gap: 8px;
+  padding: 10px 20px;
+  border-bottom: 1px solid #e4e9f1;
+  background: #fbf8ef;
+}
+
+.source {
+  min-width: 170px;
+  display: grid;
+  gap: 3px;
+  border: 1px solid #e4d9bd;
+  border-radius: 7px;
+  padding: 9px 10px;
+  color: #213329;
+  text-decoration: none;
+  background: #fffefb;
+}
+
+.source span {
+  font-size: 0.84rem;
+  font-weight: 700;
+}
+
+.source small {
+  color: #6a5d43;
+}
+
+.messages {
+  grid-row: 3;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  overflow-y: auto;
+  padding: 20px;
+  background: #f8fafb;
+}
+
+.message {
+  width: min(86%, 680px);
+  border: 1px solid #e0e6ee;
+  border-radius: 8px;
+  padding: 12px 14px;
+  background: #ffffff;
+  white-space: pre-wrap;
+}
+
+.message p {
+  margin: 0;
+  color: #263241;
+  line-height: 1.55;
+}
+
+.assistant {
+  align-self: flex-start;
+}
+
+.user {
+  align-self: flex-end;
+  border-color: #bfd4cb;
+  background: #edf7f3;
+}
+
+.error {
+  grid-row: 4;
+  margin: 0 20px 14px;
+}
+
+.composer {
+  grid-row: 5;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 48px;
+  gap: 10px;
+  padding: 14px 20px 18px;
+  border-top: 1px solid #e4e9f1;
+  background: #ffffff;
+}
+
+.composer textarea {
+  min-height: 48px;
+  max-height: 140px;
+  resize: vertical;
+  border: 1px solid #cfd8e3;
+  border-radius: 7px;
+  padding: 12px;
+  color: #14213d;
+  outline: none;
+}
+
+.composer textarea:focus {
+  border-color: #356859;
+  box-shadow: 0 0 0 3px rgba(53, 104, 89, 0.14);
+}
+
+.composer button {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  border: 0;
+  border-radius: 7px;
+  background: #233d4d;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.composer button:disabled {
+  background: #9aa8b4;
+  cursor: not-allowed;
+}
+
+@media (max-width: 640px) {
+  .header {
+    padding: 14px 16px;
+  }
+
+  .title {
+    font-size: 1.05rem;
+  }
+
+  .messages {
+    padding: 16px;
+  }
+
+  .message {
+    width: 94%;
+  }
+
+  .composer {
+    padding: 12px 16px 16px;
+  }
+}
